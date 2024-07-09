@@ -247,8 +247,6 @@ with tab3:
         title=dict(text='Curva de Phillips', font=dict(size=16, color='#333333'), x=0.01, xanchor='left'),
         xaxis=dict(title='Tasa de desempleo (%)', title_font=dict(size=12, color='#333333'), tickfont=dict(color='#333333')),
         yaxis=dict(title='Inflación total', title_font=dict(size=12, color='#333333'), tickfont=dict(color='#333333')),
-        plot_bgcolor='#f7f7f7',  # Light background
-        paper_bgcolor='#f7f7f7',
    )
 
     st.plotly_chart(fig)
@@ -290,8 +288,6 @@ with tab3:
         title=dict(text='Inflación', font=dict(size=16, color='#333333'), x=0.01, xanchor='left'),
         xaxis=dict(title='Fecha', title_font=dict(size=14, color='#333333'), tickformat='%Y-%m', tickfont=dict(size=12, color='#333333')),
         yaxis=dict(title='Inflación', title_font=dict(size=14, color='#333333'), tickfont=dict(size=12, color='#333333')),
-        plot_bgcolor='#f7f7f7',  # Light background
-        paper_bgcolor='#f7f7f7',
         legend=dict(font=dict(size=12), borderwidth=0, x=0,  # Adjust this value to place the legend on the left side
         xanchor='left',  # Anchor the legend box to the left
         y=1,  # Position at the top
