@@ -152,25 +152,25 @@ with tab2:
     axes[0, 0].set_title('Base Monetaria', loc='left', fontsize=12, fontweight='bold')
     axes[0, 0].set_ylabel('Amount', fontsize=10)
     base_mon[['Efectivo', 'Reserva Bancaria']].div(base_mon['Total'], axis=0).plot(kind='area', stacked=True, ax=axes[0, 1], color=economist_colors[:2], alpha=0.6)
-    axes[0, 1].set_title('Base Monetaria (Normalized)', loc='left', fontsize=12, fontweight='bold')
+    axes[0, 1].set_title('Base Monetaria (Normalizada)', loc='left', fontsize=12, fontweight='bold')
 
     m1.plot(kind='area', stacked=True, ax=axes[1, 0], color=economist_colors[:2], alpha=0.6)
     axes[1, 0].set_title('M1', loc='left', fontsize=12, fontweight='bold')
     axes[1, 0].set_ylabel('Amount', fontsize=10)
     m1.div(m1['Cuentas Corrientes'] + m1['Efectivo'], axis=0).plot(kind='area', stacked=True, ax=axes[1, 1], color=economist_colors[:2], alpha=0.6)
-    axes[1, 1].set_title('M1 (Normalized)', loc='left', fontsize=12, fontweight='bold')
+    axes[1, 1].set_title('M1 (Normalizada)', loc='left', fontsize=12, fontweight='bold')
 
     m2.plot(kind='area', stacked=True, ax=axes[2, 0], color=economist_colors[:2], alpha=0.6)
     axes[2, 0].set_title('M2', loc='left', fontsize=12, fontweight='bold')
     axes[2, 0].set_ylabel('Amount', fontsize=10)
-    m2.div(m2['Cuasidineros <sup>1/</sup>'] + m2['m1'], axis=0).plot(kind='area', stacked=True, ax=axes[2, 1], color=economist_colors[:2], alpha=0.6)
-    axes[2, 1].set_title('M2 (Normalized)', loc='left', fontsize=12, fontweight='bold')
+    m2.div(m2['Cuasidineros'] + m2['m1'], axis=0).plot(kind='area', stacked=True, ax=axes[2, 1], color=economist_colors[:2], alpha=0.6)
+    axes[2, 1].set_title('M2 (Normalizada)', loc='left', fontsize=12, fontweight='bold')
 
     m3.plot(kind='area', stacked=True, ax=axes[3, 0], color=economist_colors[:2], alpha=0.6)
     axes[3, 0].set_title('M3', loc='left', fontsize=12, fontweight='bold')
     axes[3, 0].set_ylabel('Amount', fontsize=10)
-    m3.div(m3['Depósitos en poder del público <sup>1/</sup>'] + m3['Efectivo'], axis=0).plot(kind='area', stacked=True, ax=axes[3, 1], color=economist_colors[:2], alpha=0.6)
-    axes[3, 1].set_title('M3 (Normalized)', loc='left', fontsize=12, fontweight='bold')
+    m3.div(m3['Depósitos en poder del público'] + m3['Efectivo'], axis=0).plot(kind='area', stacked=True, ax=axes[3, 1], color=economist_colors[:2], alpha=0.6)
+    axes[3, 1].set_title('M3 (Normalizada)', loc='left', fontsize=12, fontweight='bold')
 
         # Improve layout
     for ax in axes[:, 0]:
@@ -178,14 +178,12 @@ with tab2:
         ax.spines['top'].set_visible(False)
         ax.spines['right'].set_visible(False)
         ax.grid(axis='y', color='gray', linestyle='-', linewidth=0.25, alpha=0.5)
-        ax.set_facecolor('#f7f7f7')
 
     for ax in axes[:, 1]:
         ax.legend().set_visible(False)
         ax.spines['top'].set_visible(False)
         ax.spines['right'].set_visible(False)
         ax.grid(axis='y', color='gray', linestyle='-', linewidth=0.25, alpha=0.5)
-        ax.set_facecolor('#f7f7f7')
 
     fig.patch.set_visible(False)
     fig.tight_layout()
@@ -202,9 +200,9 @@ with tab2:
     money.plot(kind='area', stacked=False, alpha=0.4, color=economist_colors, ax=ax)
 
         # Set title and labels with a specific font
-    ax.set_title('Economic Data Over Time', fontsize=16, fontweight='bold', loc='left', color='#333333')
-    ax.set_xlabel('Date', fontsize=12, color='#333333')
-    ax.set_ylabel('Value', fontsize=12, color='#333333')
+    ax.set_title('Dinero en el tiempo', fontsize=16, fontweight='bold', loc='left', color='#333333')
+    ax.set_xlabel('Fecha', fontsize=12, color='#333333')
+    ax.set_ylabel('Valor', fontsize=12, color='#333333')
 
         # Customize the legend
     ax.legend(frameon=False, loc='upper left', fontsize=10)
@@ -217,9 +215,6 @@ with tab2:
         # Customize tick parameters
     ax.tick_params(axis='x', colors='#333333')
     ax.tick_params(axis='y', colors='#333333')
-
-        # Add a light background
-    ax.set_facecolor('#f7f7f7')
 
         # Remove unnecessary borders
     fig.patch.set_visible(False)
