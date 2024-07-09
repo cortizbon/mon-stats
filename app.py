@@ -52,14 +52,14 @@ with tab1:
                             y=data['TIB'],
                             mode='lines',
                             name='TIB',
-                            line=dict(color='#1f77b4', width=2)))
+                            line=dict(color='#ff7f0e', width=2, dash='dash')))
 
     # Add the target inflation line
     fig.add_trace(go.Scatter(x=data.index,
                             y=data['TIR'],
                             mode='lines',
                             name='TIR',
-                            line=dict(color='#ff7f0e', width=2, dash='dash')))
+                            line=dict(color='#1f77b4', width=2)))
 
     # Fill the range between lower_range and upper_range around series1
     fig.add_trace(go.Scatter(x=data.index,
