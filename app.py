@@ -77,7 +77,7 @@ with tab1:
 
     # Customize the layout to mimic The Economist style
     fig.update_layout(
-        title=dict(text='Estabilidad macro', font=dict(size=16, color='#333333'), x=0.01, xanchor='left'),
+        title=dict(text='TIB vs. TIR', font=dict(size=16, color='#333333'), x=0.01, xanchor='left'),
         xaxis=dict(title='Fecha', title_font=dict(size=14, color='#333333'), tickformat='%Y-%m', tickfont=dict(size=12, color='#333333')),
         yaxis=dict(title='Tasas', title_font=dict(size=14, color='#333333'), tickfont=dict(size=12, color='#333333')),
         legend=dict(font=dict(size=12), borderwidth=0, x=1,  # Adjust this value to place the legend on the left side
@@ -119,7 +119,7 @@ with tab1:
 
     # Customize the layout to mimic The Economist style
     fig.update_layout(
-        title=dict(text='TIB vs. TIR ', font=dict(size=16, color='#333333'), x=0.01, xanchor='left'),
+        title=dict(text='Estabilidad macro', font=dict(size=16, color='#333333'), x=0.01, xanchor='left'),
         xaxis=dict(title='Fecha', title_font=dict(size=14, color='#333333'), tickformat='%Y-%m', tickfont=dict(size=12, color='#333333')),
         yaxis=dict(title='Tasas', title_font=dict(size=14, color='#333333'), tickfont=dict(size=12, color='#333333')),
         legend=dict(
